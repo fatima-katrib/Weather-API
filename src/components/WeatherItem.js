@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import mostlyCloudy from "../img/weather-icons/mostlycloudy.svg";
+import storm from "../img/weather-icons/storm.svg";
 
 export default class WeatherItem extends Component {
   render() {
@@ -13,12 +13,15 @@ export default class WeatherItem extends Component {
           alignItems: "center",
         }}
       >
-        <h4 style={{ display: this.props.timeDisplay }}>3:00</h4>
+        <p style={{ display: this.props.timeDisplay }}>3:00</p>
         <img
-          src={mostlyCloudy}
+          src={storm}
+          alt="storm icon"
           style={{ width: this.props.width, height: "auto" }}
         />
-        <h4 style={{ display: this.props.timeDisplay }}>11&#176;C</h4>
+        <p style={{ display: this.props.timeDisplay }}>
+          {this.props.meanTemperature}&#176;C
+        </p>
         <h2 style={{ color: "white", display: this.props.THPDisplay }}>
           overcast clouds
         </h2>
@@ -32,7 +35,8 @@ export default class WeatherItem extends Component {
         >
           <h2>Temperature </h2>
           <span style={{ fontSize: "1.5em", padding: "20px" }}>
-            10&#176; to 11&#176;C
+            {this.props.lowerTemperature}&#176; to{" "}
+            {this.props.higherTemperature}&#176;C
           </span>
         </div>
 
@@ -45,9 +49,13 @@ export default class WeatherItem extends Component {
           }}
         >
           <h3>Humidity </h3>
-          <span style={{ fontSize: "1em", padding: "20px" }}>78%</span>
+          <span style={{ fontSize: "1em", padding: "20px" }}>
+            {this.props.humidity}%
+          </span>
           <h3>Pressure </h3>
-          <span style={{ fontSize: "1em", padding: "20px" }}>1008.48</span>
+          <span style={{ fontSize: "1em", padding: "20px" }}>
+            {this.props.pressure}
+          </span>
         </div>
       </div>
     );

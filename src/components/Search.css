@@ -17,7 +17,3 @@ outline-style: none;
 .searchBar > input:focus{
     border-bottom: 1px solid #5D7AC1;
 }
-
-.searchBar > button{
-color: #010745;
-}
