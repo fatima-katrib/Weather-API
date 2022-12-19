@@ -10,20 +10,40 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Fatima",
+      city: "",
     };
   }
 
   handleInputChange = (value) => {
-    this.setState({ name: value });
+    this.setState({ city: value });
   };
 
   render() {
     return (
       <div className="app">
-        <SayHi />
-        <SayHello color="black" name={this.state.name} />
-        <Search handleInput={this.handleInputChange} />
+        <header className="app__header">
+          <Search handleInput={this.handleInputChange} />
+        </header>
+        <main className="app__main" style={{ height: "100vh" }}>
+          <SayHi width="300px" timeDisplay="none" THPDisplay="flex" />
+          {/* <SayHello color="#010745" name={this.state.city} /> */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+              width: "80vw",
+            }}
+          >
+            <SayHi THPDisplay="none" width="6vw" />
+            <SayHi width="6vw" THPDisplay="none" />
+            <SayHi width="6vw" THPDisplay="none" />
+            <SayHi width="6vw" THPDisplay="none" />
+            <SayHi width="6vw" THPDisplay="none" />
+            <SayHi width="6vw" THPDisplay="none" />
+            <SayHi width="6vw" THPDisplay="none" />
+          </div>
+        </main>
       </div>
     );
   }
