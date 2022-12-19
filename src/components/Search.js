@@ -31,3 +31,4 @@ class Search extends React.Component {
   }
 }
 export default Search;
+// /home/sarah/Documents/CODI/Weather-API/src/components/Search.js
